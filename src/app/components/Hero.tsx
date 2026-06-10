@@ -1,102 +1,75 @@
-import React from 'react';
-import { motion } from 'motion/react';
-import { ImageWithFallback } from './figma/ImageWithFallback';
-import { ArrowRight, Sparkles } from 'lucide-react';
-import mainPhoto from "figma:asset/6OosFAYhuxx9cx9EYKBGPA8Xak4sMB8ffqJoUHCszNN2EORYvb8e_FCbMKh6LvA01F6-87q2C246IlZDOXJWBGE3__1_.jpg";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
+import daryaPhoto from "figma:asset/6OosFAYhuxx9cx9EYKBGPA8Xak4sMB8ffqJoUHCszNN2EORYvb8e_FCbMKh6LvA01F6-87q2C246IlZDOXJWBGE3__1_.jpg";
 
 export function Hero() {
   return (
-    <section className="relative pt-32 pb-20 overflow-hidden">
-      {/* Background patterns */}
-      <div className="absolute top-0 right-0 -z-10 w-1/2 h-full bg-amber-50/50 rounded-l-[100px] hidden lg:block" />
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+    <section className="pt-28 pb-20 px-6 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div>
+          <p className="text-[#B84B2A] text-sm tracking-widest uppercase mb-4" style={{ fontFamily: "var(--font-body)" }}>
+            Карьерные консультации
+          </p>
+          <h1
+            className="text-[#1C1208] mb-6 leading-[1.15]"
+            style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.4rem, 5vw, 3.6rem)", fontWeight: 600 }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-700 text-sm font-semibold mb-6">
-              
-              
-            </div>
-            
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-gray-900 leading-[1.1] mb-6">Карьерные консультации</h1>
-            
-            <p className="text-lg text-gray-600 mb-8 max-w-xl leading-relaxed">Карьерные консультации от Дарьи Финенко — эксперта по найму и бизнес-психолога (ВШЭ). Помогаю найти истинную траекторию развития и «упаковать» ваш опыт для рынка.</p>
-            
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="#services"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gray-900 text-white rounded-2xl font-bold hover:bg-gray-800 transition-all shadow-xl shadow-gray-200"
-              >
-                Начать консультацию
-                <ArrowRight className="w-5 h-5" />
-              </a>
-              <a
-                href="#contact"
-                className="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-700 border border-gray-200 rounded-2xl font-bold hover:bg-gray-50 transition-all"
-              >
-                Бесплатный созвон 20 мин
-              </a>
-            </div>
-            
-            <div className="mt-12 flex items-center gap-6">
-              <div className="flex -space-x-3">
-                {[1, 2, 3, 4].map((i) => (
-                  <div key={i} className="w-12 h-12 rounded-full border-2 border-white bg-gray-200 overflow-hidden">
-                    <ImageWithFallback 
-                      src={`https://images.unsplash.com/photo-${1500000000000 + i * 1000000}?auto=format&fit=crop&q=80&w=100`} 
-                      alt="Reviewer" 
-                    />
-                  </div>
-                ))}
+            Упакую ваш опыт для заветного оффера
+          </h1>
+          <p className="text-[#6B5D52] text-lg leading-relaxed mb-8 max-w-md">
+            Я не переписываю резюме — я вникаю в ваши сильные стороны и показываю двери, в которые вы можете войти. Их больше, чем кажется.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4">
+            <a
+              href="#pricing"
+              className="inline-flex items-center justify-center px-7 py-3.5 rounded-full bg-[#B84B2A] text-[#FAF7F0] hover:bg-[#9E3D1F] transition-colors duration-200"
+            >
+              Записаться на консультацию
+            </a>
+            <a
+              href="#about"
+              className="inline-flex items-center justify-center px-7 py-3.5 rounded-full border border-[rgba(44,24,16,0.2)] text-[#1C1208] hover:border-[#B84B2A] hover:text-[#B84B2A] transition-colors duration-200"
+            >
+              Узнать подробнее
+            </a>
+          </div>
+
+          <div className="flex gap-8 mt-12 pt-8 border-t border-[rgba(44,24,16,0.1)]">
+            {[
+              { value: "4+", label: "лет опыта в HR" },
+              { value: "1000+", label: "собеседований" },
+              { value: "100+", label: "успешных кейсов" },
+            ].map((stat) => (
+              <div key={stat.label}>
+                <p
+                  className="text-[#B84B2A] mb-0.5"
+                  style={{ fontFamily: "var(--font-display)", fontSize: "1.8rem", fontWeight: 600, lineHeight: 1 }}
+                >
+                  {stat.value}
+                </p>
+                <p className="text-[#6B5D52] text-xs leading-tight">{stat.label}</p>
               </div>
-              <div>
-                <p className="text-sm font-bold text-gray-900">500+ учеников</p>
-                <p className="text-xs text-gray-500 font-medium">пришли в профессию</p>
-              </div>
-            </div>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            className="relative"
+            ))}
+          </div>
+        </div>
+
+        <div className="relative">
+          <div className="relative rounded-2xl overflow-hidden aspect-[4/5] bg-[#DDD8CE]">
+            <ImageWithFallback
+              src={daryaPhoto}
+              alt="Дарья Финенко — HR-специалист и карьерный консультант"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#1C1208]/20 to-transparent" />
+          </div>
+          <div
+            className="absolute -bottom-5 -left-5 bg-[#FAF7F0] rounded-xl px-5 py-4 border border-[rgba(44,24,16,0.08)] shadow-sm"
           >
-            <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl z-10">
-              <ImageWithFallback
-                src={mainPhoto}
-                alt="Дарья Финенко"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-            </div>
-            
-            {/* Floating cards */}
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 4, repeat: Infinity }}
-              className="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl z-20 border border-amber-50 max-w-[200px]"
-            >
-              <p className="text-xs font-bold text-amber-600 mb-1 uppercase tracking-wider">Гарантия</p>
-              <p className="text-sm font-medium text-gray-700">Качественный подбор и адаптация под любой бизнес</p>
-            </motion.div>
-            
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 5, repeat: Infinity, delay: 0.5 }}
-              className="absolute top-10 -right-6 bg-white p-4 rounded-2xl shadow-xl z-20 border border-amber-50"
-            >
-              <div className="flex items-center gap-2 mb-1">
-                <div className="w-2 h-2 rounded-full bg-green-500" />
-                <span className="text-xs font-bold text-gray-900">100+ кейсов</span>
-              </div>
-              <p className="text-xs text-gray-500">по подбору ассистентов</p>
-            </motion.div>
-          </motion.div>
+            <p className="text-[#6B5D52] text-xs mb-1">Специализация</p>
+            <p className="text-[#1C1208] text-sm" style={{ fontWeight: 500 }}>
+              HR · Рекрутинг · Карьера
+            </p>
+          </div>
         </div>
       </div>
     </section>
